@@ -45,7 +45,9 @@ export class CheckoutCounter extends Component {
     }
     public addItemToScan(item: Item) {
         this.itemsInTable.push(item)
-    
+    }
+    public reset() {
+        this.give = 0
     }
 }
 

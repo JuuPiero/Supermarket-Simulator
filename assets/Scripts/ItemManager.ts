@@ -2,6 +2,7 @@ import { _decorator, Component, instantiate, Node, Prefab, tween, Vec3 } from 'c
 import { Item } from './Item';
 import { ServiceLocator } from './ServiceLocator';
 import { CheckoutCounter } from './Checkout/CheckoutCounter';
+import { TutorialController } from './TutorialController';
 const { ccclass, property } = _decorator;
 
 @ccclass('ItemManager')
@@ -25,12 +26,13 @@ export class ItemManager extends Component {
         return this.map.get(id)
     }
 
-    spawnItem(itemId: string) {
+    spawnItem(itemId: string): Item {
 
         const prefab = this.getItem(itemId)
         const itemNode = instantiate(prefab)
         const checkout = ServiceLocator.get(CheckoutCounter)
-        checkout.addItemToScan(itemNode.getComponent(Item))
+        const item = itemNode.getComponent(Item)
+        checkout.addItemToScan(item)
         
         itemNode.setParent(checkout.node)
         const basePos = checkout.checkoutPositon.position.clone()
@@ -51,8 +53,12 @@ export class ItemManager extends Component {
 
         tween(itemNode)
             .to(0.3, { position: targetPos })
+            .call(() => {
+                // ServiceLocator.get(TutorialController).setTarget(itemNode)
+            })
             .start()
 
         this.spawnIndex++
+        return item
     }
 }

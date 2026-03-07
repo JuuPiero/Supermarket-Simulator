@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Camera, Vec3, UITransform } from 'cc';
+import { _decorator, Component, Node, Camera, Vec3, UITransform, tween } from 'cc';
 import { ServiceLocator } from './ServiceLocator';
 const { ccclass, property } = _decorator;
 
@@ -7,6 +7,9 @@ export class TutorialController extends Component {
 
     @property(Node)
     public arrow: Node = null!;
+
+    @property(Node)
+    public text: Node = null!;
 
     @property(Node)
     public target: Node = null!;
@@ -19,30 +22,38 @@ export class TutorialController extends Component {
 
     protected start(): void {
         ServiceLocator.register(TutorialController, this)
+
+        tween(this.text)
+            .to(0.5, { scale: new Vec3(1.1, 1.1, 1.1) }) // phóng to
+            .to(0.5, { scale: new Vec3(1, 1, 1) })       // thu nhỏ
+            .union()
+            .repeatForever()
+            .start();
+        this.hide()
     }
 
-    update() {
+    // update() {
 
-        if (!this.target || !this.arrow) return;
+    //     if (!this.target || !this.arrow) return;
 
-        // lấy world position của target
-        this.target.getWorldPosition(this._worldPos);
+    //     // lấy world position của target
+    //     this.target.getWorldPosition(this._worldPos);
 
-        // offset để mũi tên ở trên object
-        this._worldPos.y += 1.5;
+    //     // offset để mũi tên ở dưới object
+    //     this._worldPos.y -= 1.5;
 
-        // convert world -> screen
-        this.camera.worldToScreen(this._worldPos, this._screenPos);
+    //     // convert world -> screen
+    //     this.camera.worldToScreen(this._worldPos, this._screenPos);
 
-        // convert screen -> UI position
-        const canvas = this.arrow.parent!.getComponent(UITransform)!;
-        const uiPos = canvas.convertToNodeSpaceAR(this._screenPos);
+    //     // convert screen -> UI position
+    //     const canvas = this.arrow.parent!.getComponent(UITransform)!;
+    //     const uiPos = canvas.convertToNodeSpaceAR(this._screenPos);
 
-        this.arrow.setPosition(uiPos.x, uiPos.y, 0);
+    //     this.arrow.setPosition(uiPos.x, uiPos.y, 0);
 
-        // xoay mũi tên (tuỳ chọn)
-        this.rotateArrow();
-    }
+    //     // xoay mũi tên (tuỳ chọn)
+    //     this.rotateArrow();
+    // }
 
     private rotateArrow() {
 
@@ -58,12 +69,18 @@ export class TutorialController extends Component {
     public setTarget(node: Node) {
         this.target = node;
     }
+   
+    // public showArrow() {
+    //     this.arrow.active = true;
+    // }
 
-    public hideArrow() {
+    public displayTutorial() {
+        this.text.active = true
+        this.arrow.active = true
+    }
+    public hide() {
         this.arrow.active = false;
+        this.text.active = false
     }
 
-    public showArrow() {
-        this.arrow.active = true;
-    }
 }

@@ -2,6 +2,7 @@ import { _decorator, animation, CCFloat, CCInteger, CCString, Component, Enum, N
 import { ServiceLocator } from './ServiceLocator';
 import { CheckoutCounter, CheckoutMethod } from './Checkout/CheckoutCounter';
 import { ItemManager } from './ItemManager';
+import { TutorialController } from './TutorialController';
 
 const { ccclass, property } = _decorator;
 
@@ -92,9 +93,10 @@ export class Customer extends Component {
 
     public placeItems() : void {
         for (const id of this.order) {
-            ServiceLocator.get(ItemManager).spawnItem(id);
+            const item = ServiceLocator.get(ItemManager).spawnItem(id);
         }
         console.log("placedItems")
+        ServiceLocator.get(TutorialController).displayTutorial()
     }
     public checkout() {
         console.log("checkout")
