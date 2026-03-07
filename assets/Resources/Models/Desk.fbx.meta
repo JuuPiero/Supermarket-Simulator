@@ -1,0 +1,78 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b9748ab2-e5a0-4c99-ab51-ef94319d2bfd",
+  "files": [],
+  "subMetas": {
+    "3ec4d": {
+      "importer": "gltf-mesh",
+      "uuid": "b9748ab2-e5a0-4c99-ab51-ef94319d2bfd@3ec4d",
+      "displayName": "",
+      "id": "3ec4d",
+      "name": "Desk.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 852
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0e670": {
+      "importer": "gltf-scene",
+      "uuid": "b9748ab2-e5a0-4c99-ab51-ef94319d2bfd@0e670",
+      "displayName": "",
+      "id": "0e670",
+      "name": "Desk.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "b9748ab2-e5a0-4c99-ab51-ef94319d2bfd@3ec4d"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "b9748ab2-e5a0-4c99-ab51-ef94319d2bfd@0e670"
+      ]
+    }
+  }
+}

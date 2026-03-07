@@ -1,0 +1,155 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19",
+  "files": [],
+  "subMetas": {
+    "7661e": {
+      "importer": "gltf-mesh",
+      "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19@7661e",
+      "displayName": "",
+      "id": "7661e",
+      "name": "Store_Shelving.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 5992
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3f474": {
+      "importer": "gltf-mesh",
+      "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19@3f474",
+      "displayName": "",
+      "id": "3f474",
+      "name": "Outdoor.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 26
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "db5e7": {
+      "importer": "gltf-mesh",
+      "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19@db5e7",
+      "displayName": "",
+      "id": "db5e7",
+      "name": "Store.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 70
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "52f06": {
+      "importer": "gltf-mesh",
+      "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19@52f06",
+      "displayName": "",
+      "id": "52f06",
+      "name": "Glass.mesh",
+      "userData": {
+        "gltfIndex": 3,
+        "triangleCount": 2
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5f5d6": {
+      "importer": "gltf-mesh",
+      "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19@5f5d6",
+      "displayName": "",
+      "id": "5f5d6",
+      "name": "Store_Board.mesh",
+      "userData": {
+        "gltfIndex": 4,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a019c": {
+      "importer": "gltf-scene",
+      "uuid": "b4230240-1df2-4cb9-9a1e-82777db6fa19@a019c",
+      "displayName": "",
+      "id": "a019c",
+      "name": "SPM Playable Ads.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "assetFinder": {
+      "meshes": [
+        "b4230240-1df2-4cb9-9a1e-82777db6fa19@7661e",
+        "b4230240-1df2-4cb9-9a1e-82777db6fa19@3f474",
+        "b4230240-1df2-4cb9-9a1e-82777db6fa19@db5e7",
+        "b4230240-1df2-4cb9-9a1e-82777db6fa19@52f06",
+        "b4230240-1df2-4cb9-9a1e-82777db6fa19@5f5d6"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "b4230240-1df2-4cb9-9a1e-82777db6fa19@a019c"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,41 @@
+import { _decorator, Component, input, Input, EventMouse, PhysicsSystem, Camera, geometry } from 'cc';
+import { Item } from './Item';
+
+const { ccclass } = _decorator;
+
+@ccclass('ClickSystem')
+export class ClickSystem extends Component {
+
+    camera!: Camera;
+
+    start() {
+        this.camera = this.getComponent(Camera)!;
+    }
+
+    onEnable() {
+        input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+    }
+
+    onDisable() {
+        input.off(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+    }
+
+    onMouseDown(event: EventMouse) {
+
+        const pos = event.getLocation();
+
+        const ray = new geometry.Ray();
+        this.camera.screenPointToRay(pos.x, pos.y, ray);
+
+        if (!PhysicsSystem.instance.raycast(ray)) return;
+
+        const result = PhysicsSystem.instance.raycastResults[0];
+        const node = result.collider.node;
+
+        const clickable = node.getComponent(Item);
+
+        if (clickable) {
+            clickable.onClick();
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "f072c434-fb00-4907-a2b1-e8b91e8620ef",
+  "files": [],
+  "subMetas": {
+    "45798": {
+      "importer": "gltf-mesh",
+      "uuid": "f072c434-fb00-4907-a2b1-e8b91e8620ef@45798",
+      "displayName": "",
+      "id": "45798",
+      "name": "Flour.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 60
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8e257": {
+      "importer": "gltf-scene",
+      "uuid": "f072c434-fb00-4907-a2b1-e8b91e8620ef@8e257",
+      "displayName": "",
+      "id": "8e257",
+      "name": "Flour.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "assetFinder": {
+      "meshes": [
+        "f072c434-fb00-4907-a2b1-e8b91e8620ef@45798"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "f072c434-fb00-4907-a2b1-e8b91e8620ef@8e257"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

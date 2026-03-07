@@ -1,0 +1,508 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "2a752682-21c2-43cd-854b-dab1c841a467",
+  "files": [
+    "__original-animation-0.cconb",
+    "__original-animation-1.cconb",
+    "__original-animation-2.cconb",
+    "__original-animation-3.cconb",
+    "__original-animation-4.cconb",
+    "__original-animation-5.cconb"
+  ],
+  "subMetas": {
+    "11953": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@11953",
+      "displayName": "",
+      "id": "11953",
+      "name": "Bag.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 48
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "30732": {
+      "importer": "gltf-skeleton",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@30732",
+      "displayName": "",
+      "id": "30732",
+      "name": "UnnamedSkeleton-0.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 52
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "57146": {
+      "importer": "gltf-animation",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@57146",
+      "displayName": "",
+      "id": "57146",
+      "name": "Walk.animation",
+      "userData": {
+        "gltfIndex": 1,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.800000011920929
+        },
+        "events": [],
+        "embeddedPlayers": [],
+        "editorExtras": {},
+        "speed": 1,
+        "auxiliaryCurves": {}
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "73128": {
+      "importer": "gltf-animation",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@73128",
+      "displayName": "",
+      "id": "73128",
+      "name": "Hand forward Idle.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 1.6666666269302368
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "5f272": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@5f272",
+      "displayName": "",
+      "id": "5f272",
+      "name": "Money.mesh",
+      "userData": {
+        "gltfIndex": 1,
+        "triangleCount": 80
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "eff22": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@eff22",
+      "displayName": "",
+      "id": "eff22",
+      "name": "CC.mesh",
+      "userData": {
+        "gltfIndex": 2,
+        "triangleCount": 20
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a1608": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@a1608",
+      "displayName": "",
+      "id": "a1608",
+      "name": "NPC02.mesh",
+      "userData": {
+        "gltfIndex": 3,
+        "triangleCount": 4568
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f59fc": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@f59fc",
+      "displayName": "",
+      "id": "f59fc",
+      "name": "NPC04.mesh",
+      "userData": {
+        "gltfIndex": 4,
+        "triangleCount": 3848
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ddcfc": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@ddcfc",
+      "displayName": "",
+      "id": "ddcfc",
+      "name": "NPC01.mesh",
+      "userData": {
+        "gltfIndex": 5,
+        "triangleCount": 4736
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "523fb": {
+      "importer": "gltf-mesh",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@523fb",
+      "displayName": "",
+      "id": "523fb",
+      "name": "NPC03.mesh",
+      "userData": {
+        "gltfIndex": 6,
+        "triangleCount": 4958
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c2696": {
+      "importer": "gltf-animation",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@c2696",
+      "displayName": "",
+      "id": "c2696",
+      "name": "Idle.animation",
+      "userData": {
+        "gltfIndex": 2,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 6.666666507720947
+        },
+        "events": [],
+        "embeddedPlayers": [],
+        "editorExtras": {
+          "embeddedPlayerGroups": []
+        },
+        "speed": 1,
+        "auxiliaryCurves": {}
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "5589a": {
+      "importer": "gltf-animation",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@5589a",
+      "displayName": "",
+      "id": "5589a",
+      "name": "Hand forward.animation",
+      "userData": {
+        "gltfIndex": 3,
+        "wrapMode": 1,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 0.7666666507720947
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "e2f45": {
+      "importer": "gltf-animation",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@e2f45",
+      "displayName": "",
+      "id": "e2f45",
+      "name": "Angry Idle.animation",
+      "userData": {
+        "gltfIndex": 4,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.08
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "0dc08": {
+      "importer": "gltf-animation",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@0dc08",
+      "displayName": "",
+      "id": "0dc08",
+      "name": "Angry Point.animation",
+      "userData": {
+        "gltfIndex": 5,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 2.5
+        },
+        "events": []
+      },
+      "ver": "1.0.17",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "f1394": {
+      "importer": "gltf-skeleton",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@f1394",
+      "displayName": "",
+      "id": "f1394",
+      "name": "UnnamedSkeleton-1.skeleton",
+      "userData": {
+        "gltfIndex": 1,
+        "jointsLength": 52
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "75ee4": {
+      "importer": "gltf-skeleton",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@75ee4",
+      "displayName": "",
+      "id": "75ee4",
+      "name": "UnnamedSkeleton-2.skeleton",
+      "userData": {
+        "gltfIndex": 2,
+        "jointsLength": 52
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a72ab": {
+      "importer": "gltf-skeleton",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@a72ab",
+      "displayName": "",
+      "id": "a72ab",
+      "name": "UnnamedSkeleton-3.skeleton",
+      "userData": {
+        "gltfIndex": 3,
+        "jointsLength": 52
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b5108": {
+      "importer": "gltf-scene",
+      "uuid": "2a752682-21c2-43cd-854b-dab1c841a467@b5108",
+      "displayName": "",
+      "id": "b5108",
+      "name": "NPC.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "animationImportSettings": [
+      {
+        "name": "Hand forward Idle",
+        "duration": 1.6666666269302368,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Hand forward Idle",
+            "from": 0,
+            "to": 1.6666666269302368,
+            "wrapMode": 2,
+            "previousId": "73128"
+          }
+        ]
+      },
+      {
+        "name": "Walk",
+        "duration": 0.800000011920929,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Walk",
+            "from": 0,
+            "to": 0.800000011920929,
+            "wrapMode": 2,
+            "previousId": "57146"
+          }
+        ]
+      },
+      {
+        "name": "Idle",
+        "duration": 6.666666507720947,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Idle",
+            "from": 0,
+            "to": 6.666666507720947,
+            "wrapMode": 2,
+            "previousId": "c2696"
+          }
+        ]
+      },
+      {
+        "name": "Hand forward",
+        "duration": 0.7666666507720947,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Hand forward",
+            "from": 0,
+            "to": 0.7666666507720947,
+            "wrapMode": 1,
+            "previousId": "5589a"
+          }
+        ]
+      },
+      {
+        "name": "Angry Idle",
+        "duration": 19.200000762939453,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Angry Idle",
+            "from": 0,
+            "to": 3.08,
+            "wrapMode": 2,
+            "previousId": "e2f45"
+          }
+        ]
+      },
+      {
+        "name": "Angry Point",
+        "duration": 2.5,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Angry Point",
+            "from": 0,
+            "to": 2.5,
+            "wrapMode": 2,
+            "previousId": "0dc08"
+          }
+        ]
+      }
+    ],
+    "assetFinder": {
+      "meshes": [
+        "2a752682-21c2-43cd-854b-dab1c841a467@11953",
+        "2a752682-21c2-43cd-854b-dab1c841a467@5f272",
+        "2a752682-21c2-43cd-854b-dab1c841a467@eff22",
+        "2a752682-21c2-43cd-854b-dab1c841a467@a1608",
+        "2a752682-21c2-43cd-854b-dab1c841a467@f59fc",
+        "2a752682-21c2-43cd-854b-dab1c841a467@ddcfc",
+        "2a752682-21c2-43cd-854b-dab1c841a467@523fb"
+      ],
+      "skeletons": [
+        "2a752682-21c2-43cd-854b-dab1c841a467@30732",
+        "2a752682-21c2-43cd-854b-dab1c841a467@f1394",
+        "2a752682-21c2-43cd-854b-dab1c841a467@75ee4",
+        "2a752682-21c2-43cd-854b-dab1c841a467@a72ab"
+      ],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "2a752682-21c2-43cd-854b-dab1c841a467@b5108"
+      ]
+    },
+    "dumpMaterials": true,
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}
