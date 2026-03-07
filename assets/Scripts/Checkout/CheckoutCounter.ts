@@ -37,7 +37,6 @@ export class CheckoutCounter extends Component {
         this.total += item.price
         const index = this.itemsInTable.indexOf(item)
         this.itemsInTable.splice(index, 1)
-        console.log("Scan item: " + item.name)
         if(this.itemsInTable.length == 0) {
             console.log("Scan done")
             // const customer = ServiceLocator.get(QueueManager).getFirstCustomer()

@@ -50,7 +50,7 @@ export class ItemManager extends Component {
         itemNode.setPosition(startPos)
 
         tween(itemNode)
-            .to(0.5, { position: targetPos })
+            .to(0.3, { position: targetPos })
             .start()
 
         this.spawnIndex++
