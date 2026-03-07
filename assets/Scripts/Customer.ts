@@ -1,6 +1,7 @@
-import { _decorator, animation, CCBoolean, CCFloat, CCInteger, Component, Node, Prefab, Quat, tween, Vec3 } from 'cc';
+import { _decorator, animation, CCFloat, CCInteger, CCString, Component, Enum, Node, Prefab, Quat, tween, Vec3 } from 'cc';
 import { ServiceLocator } from './ServiceLocator';
-import { CheckoutCounter } from './Checkout/CheckoutCounter';
+import { CheckoutCounter, CheckoutMethod } from './Checkout/CheckoutCounter';
+import { ItemManager } from './ItemManager';
 
 const { ccclass, property } = _decorator;
 
@@ -15,16 +16,25 @@ export class Customer extends Component {
     public moneysObject: Node;
     @property({type : Node})
     public cardObject: Node;
+    @property({type : Node})
+    public rightHand: Node;
+
     
     @property({type : animation.AnimationController})
-    protected animator: animation.AnimationController;
+    public animator: animation.AnimationController;
 
     @property({type : CCInteger})
     public currentVisualIndex: number = 0;
     public isMoving: boolean = false;
     
-    @property({type : Prefab})
-    public items: Prefab[];
+    @property({type : [CCString]})
+    public order: string[] = [];
+    @property({type : CCFloat})
+    public amountMoney: number = 0;
+    @property({type: Enum(CheckoutMethod)})
+    public checkoutMethod: CheckoutMethod;
+
+    
 
     start() {
         this.activeVisual();
@@ -81,7 +91,25 @@ export class Customer extends Component {
     }
 
     public placeItems() : void {
-        
+        for (const id of this.order) {
+            ServiceLocator.get(ItemManager).spawnItem(id);
+        }
+        console.log("placedItems")
+    }
+    public checkout() {
+        console.log("checkout")
+        switch (this.checkoutMethod) {
+            case CheckoutMethod.Card:
+                this.cardObject.setParent(this.rightHand)
+                this.cardObject.setPosition(Vec3.ZERO);
+                break;
+            case CheckoutMethod.Cash:
+                this.moneysObject.setParent(this.rightHand)
+                this.moneysObject.setPosition(Vec3.ZERO);
+                break;
+            default:
+                break;
+        }
     }
 }
 

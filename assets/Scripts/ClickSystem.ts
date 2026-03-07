@@ -32,10 +32,11 @@ export class ClickSystem extends Component {
         const result = PhysicsSystem.instance.raycastResults[0];
         const node = result.collider.node;
 
-        const clickable = node.getComponent(Item);
+        const item = node.getComponent(Item);
+        // const payment = node.getComponent
 
-        if (clickable) {
-            clickable.onClick();
+        if (item) {
+            item.onClick();
         }
     }
 }

@@ -1,0 +1,79 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "6c713aaa-5735-461b-b6f6-5408c2b391e0",
+  "files": [],
+  "subMetas": {
+    "2245b": {
+      "importer": "gltf-mesh",
+      "uuid": "6c713aaa-5735-461b-b6f6-5408c2b391e0@2245b",
+      "displayName": "",
+      "id": "2245b",
+      "name": "Drink_Csush.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 96
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "190db": {
+      "importer": "gltf-scene",
+      "uuid": "6c713aaa-5735-461b-b6f6-5408c2b391e0@190db",
+      "displayName": "",
+      "id": "190db",
+      "name": "Drink_Csush.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "assetFinder": {
+      "meshes": [
+        "6c713aaa-5735-461b-b6f6-5408c2b391e0@2245b"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "6c713aaa-5735-461b-b6f6-5408c2b391e0@190db"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

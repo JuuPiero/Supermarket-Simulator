@@ -1,5 +1,6 @@
 import { _decorator, Component, Node } from 'cc';
 import { Customer } from './Customer';
+import { ServiceLocator } from './ServiceLocator';
 const { ccclass, property } = _decorator;
 
 @ccclass('QueueManager')
@@ -12,6 +13,7 @@ export class QueueManager extends Component {
     public customers: Customer[] = [];
 
     start() {
+        ServiceLocator.register(QueueManager, this)
         this.updateQueue();
     }
 
@@ -31,9 +33,15 @@ export class QueueManager extends Component {
         }
     }
 
+    public getFirstCustomer() {
+        return this.customers[0]
+    }
+
     startCheckout(customer: Customer) {
         console.log("Customer start checkout");
         customer.placeItems()
+        // customer.animator.setValue("isPaying", true)
+        // customer.checkout()
     }
     
 }
