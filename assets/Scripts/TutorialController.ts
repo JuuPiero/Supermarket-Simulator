@@ -51,29 +51,6 @@ export class TutorialController extends Component {
         this.displayTutorial()
     }
 
-    // update() {
-
-    //     if (!this.target || !this.arrow) return;
-
-    //     // lấy world position của target
-    //     this.target.getWorldPosition(this._worldPos);
-
-    //     // offset để mũi tên ở dưới object
-    //     this._worldPos.y -= 1.5;
-
-    //     // convert world -> screen
-    //     this.camera.worldToScreen(this._worldPos, this._screenPos);
-
-    //     // convert screen -> UI position
-    //     const canvas = this.arrow.parent!.getComponent(UITransform)!;
-    //     const uiPos = canvas.convertToNodeSpaceAR(this._screenPos);
-
-    //     this.arrow.setPosition(uiPos.x, uiPos.y, 0);
-
-    //     // xoay mũi tên (tuỳ chọn)
-    //     this.rotateArrow();
-    // }
-
     private rotateArrow() {
 
         const dir = new Vec3();

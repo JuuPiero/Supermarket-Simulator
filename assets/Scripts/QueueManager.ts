@@ -4,6 +4,7 @@ import { ServiceLocator } from './ServiceLocator';
 import { CheckoutCounter } from './Checkout/CheckoutCounter';
 import { EventBus } from './EventBus';
 import { GameEvent } from './GameEvent';
+import { NavigationContainer } from './UI/Navigation/NavigationContainer';
 const { ccclass, property } = _decorator;
 
 @ccclass('QueueManager')
@@ -59,9 +60,9 @@ export class QueueManager extends Component {
             customer.destroy()
         })
         if(this.customers.length == 0) {
-            // EventBus.emit(GameEvent.LEVEL_COMPLETE)
+            EventBus.emit(GameEvent.LEVEL_COMPLETED)
             console.log("winnn!!!!")
-            sys.openURL("https://google.com");
+            
         }
     }
 
