@@ -6,6 +6,7 @@ import { EventBus } from '../../EventBus';
 import { GameEvent } from '../../GameEvent';
 import { ServiceLocator } from '../../ServiceLocator';
 import { CheckoutCounter } from '../../Checkout/CheckoutCounter';
+import { SoundManager } from '../../SoundManager';
 
 const { ccclass, property } = _decorator;
 
@@ -32,6 +33,7 @@ export class CardCheckoutScreen extends ScreenBase {
         for (const element of buttons) {
             element.onClick = () => {
                 this.onDigitClick(element.value)
+                SoundManager.instance.playOneShot("Click")
             }
         }
     }

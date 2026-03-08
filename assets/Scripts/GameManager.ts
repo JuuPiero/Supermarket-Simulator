@@ -3,6 +3,7 @@ import { EventBus } from './EventBus';
 import { GameEvent } from './GameEvent';
 import { ServiceLocator } from './ServiceLocator';
 import { NavigationContainer } from './UI/Navigation/NavigationContainer';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('GameManager')
@@ -16,6 +17,7 @@ export class GameManager extends Component {
     }
 
     onLevelCompleted = () => {
+        SoundManager.instance.playOneShot("Success")
         ServiceLocator.get(NavigationContainer).stack.navigate("EndCard")
         this.installGame()
     }

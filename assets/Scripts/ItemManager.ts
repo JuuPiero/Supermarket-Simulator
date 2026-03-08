@@ -39,11 +39,14 @@ export class ItemManager extends Component {
         const itemNode = instantiate(this.moneyPrefab)
         itemNode.setParent(checkout.node)
         const basePos = checkout.checkoutPositon.position.clone()
-        const offset = 0.1 * this.spawnIndex
+        const radius = 0.25
+        const angle = Math.random() * Math.PI * 2
+        const r = Math.random() * radius
+
         const targetPos = new Vec3(
-            basePos.x + offset,
+            basePos.x + Math.cos(angle) * r,
             basePos.y,
-            basePos.z
+            basePos.z + Math.sin(angle) * r
         )
 
         const startPos = new Vec3(

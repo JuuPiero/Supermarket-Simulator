@@ -7,6 +7,7 @@ import { EventBus } from '../EventBus';
 import { GameEvent } from '../GameEvent';
 import { MonitorUI } from '../UI/MonitorUI';
 import { QueueManager } from '../QueueManager';
+import { SoundManager } from '../SoundManager';
 const { ccclass, property } = _decorator;
 export enum CheckoutMethod {
     Cash,
@@ -75,6 +76,7 @@ export class CheckoutCounter extends Component {
     onCheckout = () => {
         if(this.give.value == this.getChange()) {
             console.log("Checkout success")
+            SoundManager.instance.playOneShot("Checkout")
             EventBus.emit(GameEvent.CHECKOUT_SUCCESS)
             this.reset()
         }
@@ -82,6 +84,7 @@ export class CheckoutCounter extends Component {
             console.log("Checkout fail")
             this.currentCustomer.animator.setValue('isAngry', true)
             EventBus.emit(GameEvent.CHECKED_FAILED)
+            SoundManager.instance.playOneShot("Error")
         }
     }
 }

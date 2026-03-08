@@ -2788,7 +2788,7 @@
     "propertyPath": [
       "checkoutMethod"
     ],
-    "value": 1
+    "value": 0
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -2798,7 +2798,7 @@
     "propertyPath": [
       "amountMoney"
     ],
-    "value": 50
+    "value": 40
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -2831,7 +2831,7 @@
       "order",
       "1"
     ],
-    "value": "Flour"
+    "value": "Juice_Apple"
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -3195,7 +3195,7 @@
       "order",
       "1"
     ],
-    "value": "Flour"
+    "value": "Juice_Apple"
   },
   {
     "__type__": "CCPropertyOverrideInfo",
@@ -3206,7 +3206,7 @@
       "order",
       "2"
     ],
-    "value": "Flour"
+    "value": "Juice_Apple"
   },
   {
     "__type__": "cc.TargetOverrideInfo",
@@ -18672,6 +18672,22 @@
       },
       {
         "__uuid__": "4bd06fe8-758a-4507-8570-c29a2ccabff2",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "b40279af-90cc-4be2-a94d-d535ad6b1c1e",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "4b4b465f-71db-491f-b8d1-601a4e03d93b",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "41964b66-8b49-4a73-83d8-8f3d5c6e7348",
+        "__expectedType__": "cc.AudioClip"
+      },
+      {
+        "__uuid__": "3d8e16b3-c2f7-4465-9102-5df0398151e2",
         "__expectedType__": "cc.AudioClip"
       }
     ],
