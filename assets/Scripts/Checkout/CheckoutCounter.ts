@@ -54,8 +54,8 @@ export class CheckoutCounter extends Component {
         this.itemsInTable.splice(index, 1)
         if(this.itemsInTable.length == 0) {
             console.log("Scan done")
-            this.currentCustomer.checkout()
-            // EventBus.emit(GameEvent.SCANNED)
+            this.currentCustomer.startCheckout()
+            // EventBus.emit(GameEvent.SCAN_DONE)
         }
     }
     public addItemToScan(item: Item) {
@@ -67,6 +67,7 @@ export class CheckoutCounter extends Component {
         this.receive.value = 0
     }
     public startCheckout() {
+        console.log("counter startCheckout")
         this.currentCustomer.animator.setValue('isPaying', false)
         this.receive.value = this.currentCustomer.amountMoney
         ServiceLocator.get(MonitorUI).prepareBill();

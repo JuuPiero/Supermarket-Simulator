@@ -29,7 +29,6 @@ export class MonitorUI extends Component {
 
     onLoad() {
         ServiceLocator.register(MonitorUI, this)
-        
     }
     protected start(): void {
         
@@ -42,6 +41,10 @@ export class MonitorUI extends Component {
     }
     onCheckedOut = () => {
         this.reset()
+    }
+
+    onScanDone = () => {
+        
     }
 
     reset() {

@@ -100,8 +100,8 @@ export class Customer extends Component {
         console.log("placedItems")
         ServiceLocator.get(TutorialController).displayTutorial()
     }
-    public checkout() {
-        console.log("customer checkout")
+    public startCheckout() {
+        console.log("customer start checkout")
         this.animator.setValue("isPaying", true);
         switch (this.checkoutMethod) {
             case CheckoutMethod.Card:

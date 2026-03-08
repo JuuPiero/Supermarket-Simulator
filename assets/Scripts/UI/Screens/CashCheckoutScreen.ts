@@ -2,9 +2,7 @@ import { _decorator, Button, Component, Node } from 'cc';
 import { ScreenBase } from '../Navigation/ScreenBase';
 import { ServiceLocator } from '../../ServiceLocator';
 import { CheckoutCounter } from '../../Checkout/CheckoutCounter';
-import { MonitorUI } from '../MonitorUI';
 import { ItemManager } from '../../ItemManager';
-import { QueueManager } from '../../QueueManager';
 import { EventBus } from '../../EventBus';
 import { GameEvent } from '../../GameEvent';
 const { ccclass, property } = _decorator;
@@ -19,8 +17,7 @@ export class CashCheckoutScreen extends ScreenBase {
 
     private _checkoutCounter!: CheckoutCounter;
     get checkoutCounter() {
-        return this._checkoutCounter ??=
-            ServiceLocator.get(CheckoutCounter);
+        return this._checkoutCounter ??= ServiceLocator.get(CheckoutCounter);
     }
 
     protected onLoad(): void {

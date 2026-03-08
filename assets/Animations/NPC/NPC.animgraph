@@ -12,10 +12,10 @@
     ],
     "_variables": {
       "isMoving": {
-        "__id__": 51
+        "__id__": 57
       },
       "isPaying": {
-        "__id__": 52
+        "__id__": 58
       }
     }
   },
@@ -81,6 +81,12 @@
       },
       {
         "__id__": 46
+      },
+      {
+        "__id__": 51
+      },
+      {
+        "__id__": 54
       }
     ],
     "_entryState": {
@@ -99,8 +105,8 @@
       "name": "",
       "id": "1dad4cb7-ba14-4908-932d-5d7d30f856af",
       "clone": null,
-      "centerX": -281.89273049645396,
-      "centerY": -19.930851063829778
+      "centerX": -303.76773049645396,
+      "centerY": -9.514184397163106
     },
     "name": "Entry"
   },
@@ -176,8 +182,8 @@
       "name": "",
       "id": "e38f6cd3-8bfa-4e01-9eba-defe40442763",
       "clone": null,
-      "centerX": -7.963794409475156,
-      "centerY": -39.25286398130993
+      "centerX": -14.213794409475156,
+      "centerY": -36.12786398130993
     },
     "name": "Walk",
     "_components": [],
@@ -264,8 +270,8 @@
       "name": "",
       "id": "7e6fdd1b-f179-4d52-b565-8d5ee1a6f26b",
       "clone": null,
-      "centerX": -86.32645882500543,
-      "centerY": 49.71061127274126
+      "centerX": -162.36812549167212,
+      "centerY": 42.418944606074604
     },
     "name": "Hand forward Idle",
     "_components": [],
@@ -308,8 +314,8 @@
       "name": "",
       "id": "23f03c94-acaf-4c8b-a000-f879e5935928",
       "clone": null,
-      "centerX": -94.36845954450388,
-      "centerY": -104.29727323063356
+      "centerX": -163.1184595445039,
+      "centerY": -89.71393989730022
     },
     "name": "Angry Idle",
     "_components": [],
@@ -352,8 +358,8 @@
       "name": "",
       "id": "93592218-cd57-4824-9d92-46edd6348956",
       "clone": null,
-      "centerX": -217.8632945737978,
-      "centerY": -94.27087020874023
+      "centerX": -263.6966279071312,
+      "centerY": -106.77087020874023
     },
     "name": "Angry Point",
     "_components": [],
@@ -580,6 +586,68 @@
     "__type__": "cc.animation.BindableBoolean",
     "variable": "isPaying",
     "value": false
+  },
+  {
+    "__type__": "cc.animation.AnimationGraphEventBinding",
+    "methodName": ""
+  },
+  {
+    "__type__": "cc.animation.AnimationGraphEventBinding",
+    "methodName": ""
+  },
+  {
+    "__type__": "cc.animation.AnimationTransition",
+    "__editorExtras__": null,
+    "from": {
+      "__id__": 6
+    },
+    "to": {
+      "__id__": 22
+    },
+    "conditions": [],
+    "destinationStart": 0,
+    "relativeDestinationStart": false,
+    "startEventBinding": {
+      "__id__": 52
+    },
+    "endEventBinding": {
+      "__id__": 53
+    },
+    "duration": 0.3,
+    "relativeDuration": false,
+    "exitConditionEnabled": true,
+    "_exitCondition": 1
+  },
+  {
+    "__type__": "cc.animation.AnimationGraphEventBinding",
+    "methodName": ""
+  },
+  {
+    "__type__": "cc.animation.AnimationGraphEventBinding",
+    "methodName": ""
+  },
+  {
+    "__type__": "cc.animation.AnimationTransition",
+    "__editorExtras__": null,
+    "from": {
+      "__id__": 22
+    },
+    "to": {
+      "__id__": 6
+    },
+    "conditions": [],
+    "destinationStart": 0,
+    "relativeDestinationStart": false,
+    "startEventBinding": {
+      "__id__": 55
+    },
+    "endEventBinding": {
+      "__id__": 56
+    },
+    "duration": 0.3,
+    "relativeDuration": false,
+    "exitConditionEnabled": true,
+    "_exitCondition": 1
   },
   {
     "__type__": "cc.animation.AnimationGraphEventBinding",
