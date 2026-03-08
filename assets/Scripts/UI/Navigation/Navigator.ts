@@ -15,7 +15,7 @@ export abstract class Navigator extends Component {
             this.screens.set(screen.screenName, screen);
         })
     }
-    public abstract navigate(screenName: string, param : object): void;
+    public abstract navigate(screenName: string, param? : object): void;
     // public abstract navigateTo<T>(param : object): void; //  where T : IScreen;
 }
 

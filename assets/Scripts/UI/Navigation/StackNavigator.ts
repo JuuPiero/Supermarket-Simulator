@@ -8,7 +8,7 @@ export class StackNavigator extends Navigator {
 
     @property({type : ScreenBase})
     public screenStack: ScreenBase[] = [];
-    public navigate(screenName: string, param: object): void {
+    public navigate(screenName: string, param?: object ): void {
         const screen = this.screens.get(screenName);
         if (screen != null)
         {

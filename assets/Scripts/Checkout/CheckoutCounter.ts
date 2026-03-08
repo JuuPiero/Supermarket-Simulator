@@ -2,6 +2,8 @@ import { _decorator, CCFloat, Component, Enum, Node, tween } from 'cc';
 import { ServiceLocator } from '../ServiceLocator';
 import { Item } from '../Item';
 import { QueueManager } from '../QueueManager';
+import { NavigationContainer } from '../UI/Navigation/NavigationContainer';
+import { Observable } from '../Observable';
 const { ccclass, property } = _decorator;
 export enum CheckoutMethod {
     Cash,
@@ -13,10 +15,10 @@ export class CheckoutCounter extends Component {
     @property({type: Node})
     public checkoutPositon: Node;
 
-    @property({type: CCFloat})
-    public total: number = 0;
-    @property({type: CCFloat})
-    public recceive: number = 0;
+    // @property({type: CCFloat})
+    public total = new Observable<number>(0);
+    // @property({type: CCFloat})
+    public receive = new Observable<number>(0);
     @property({type: CCFloat})
     public give: number = 0;
 
@@ -26,19 +28,20 @@ export class CheckoutCounter extends Component {
     @property({type: Item})
     public itemsInTable: Item[] = []
 
-    start() {
+    onLoad() {
         ServiceLocator.register(CheckoutCounter, this);
     }
 
     getChange() {
-        return this.recceive - this.total;
+        return this.receive.value - this.total.value;
     }
     public scanItem(item: Item) {
-        this.total += item.price
+        this.total.value += item.price
         const index = this.itemsInTable.indexOf(item)
         this.itemsInTable.splice(index, 1)
         if(this.itemsInTable.length == 0) {
             console.log("Scan done")
+            ServiceLocator.get(NavigationContainer).stack.navigate('CashCheckout')
             // const customer = ServiceLocator.get(QueueManager).getFirstCustomer()
             // customer.checkout()
         }

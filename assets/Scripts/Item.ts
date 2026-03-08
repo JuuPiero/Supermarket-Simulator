@@ -25,6 +25,7 @@ export class Item extends Component implements IClickable {
             this.node.active = false;
             this.destroy()     
         }).start()
+        ServiceLocator.get(TutorialController).hide()
         // Checkout.scanItem(this)
         // this.node.active = false;
     }

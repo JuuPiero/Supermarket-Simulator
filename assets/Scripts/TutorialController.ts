@@ -29,6 +29,13 @@ export class TutorialController extends Component {
             .union()
             .repeatForever()
             .start();
+        tween(this.arrow)
+            .to(0.5, { scale: new Vec3(1.1, 1.1, 1.1) }) 
+            .to(0.5, { scale: new Vec3(1, 1, 1) }) 
+            .union()
+            .repeatForever()
+            .start();
+
         this.hide()
     }
 

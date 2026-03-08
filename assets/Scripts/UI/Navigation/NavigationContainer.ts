@@ -10,7 +10,6 @@ export class NavigationContainer extends Component {
 
     // public tab: tabNavigator = null;
 
-
     protected start(): void {
         ServiceLocator.register(NavigationContainer, this);
         this.stack = this.getComponentInChildren(StackNavigator);
