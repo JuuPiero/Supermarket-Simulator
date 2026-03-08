@@ -1,6 +1,6 @@
 # Playable Supermarket Simulator Game
 
-[Play Demo Game Here](https://juupiero.github.io/Supermarket-Simulator/)
+# [Play Demo Game Here](https://juupiero.github.io/Supermarket-Simulator/)
 
 ## Technologies and Techniques Used
 
