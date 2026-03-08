@@ -74,6 +74,22 @@
           "faceCount": 0.1
         }
       ]
+    },
+    "meshSimplify": {
+      "errorRate": 0.6,
+      "targetRatio": 0.6,
+      "enable": true
+    },
+    "meshCompress": {
+      "enable": true,
+      "compress": true
+    },
+    "allowMeshDataAccess": false,
+    "tangents": 1,
+    "meshOptimize": {
+      "enable": true,
+      "vertexFetch": true,
+      "vertexCache": true
     }
   }
 }
