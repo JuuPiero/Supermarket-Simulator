@@ -21,21 +21,29 @@ export class MonitorUI extends Component {
 
     onLoad() {
         ServiceLocator.register(MonitorUI, this)
-
+        this.receiveUI.node.active = false
     }
     protected start(): void {
         const checkoutCounter: CheckoutCounter = ServiceLocator.get(CheckoutCounter)
-        checkoutCounter.receive.onValueChange((value) => {
-            this.receiveUI.setData("Receive", `$${value}`)
-        })
         checkoutCounter.total.onValueChange((value) => {
-            this.totalUI.setData("Total", `$${value}`)
+            this.totalUI.setData("Receive", `$${value}`)
         })
+        // checkoutCounter.receive.onValueChange(this.receiveChanged)
     }
+    // onDestroy() {
+    //     const checkoutCounter: CheckoutCounter = ServiceLocator.get(CheckoutCounter)
+    //     checkoutCounter.total.offValueChange(this.totalChanged)
+    //     checkoutCounter.receive.offValueChange(this.receiveChanged)
+    // }
+    // totalChanged(value: number) {
+    //     console.log(this.totalUI)
+    //     // this.totalUI.setData("Receive", `$${value}`)
+    // }
 
-    receiveChange(value: number) {
-
-    }
+    // receiveChanged(value: number) {
+    //     this.receiveUI.setData("Receive", `$${value}`)
+    // }
+   
 }
 
 

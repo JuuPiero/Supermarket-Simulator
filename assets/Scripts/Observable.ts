@@ -21,4 +21,10 @@ export class Observable<T> {
     onValueChange(listener: Listener<T>) {
         this.listeners.push(listener);
     }
+    offValueChange(listener: Listener<T>) {
+        const i = this.listeners.indexOf(listener);
+        if (i !== -1) {
+            this.listeners.splice(i, 1);
+        }
+    }
 }

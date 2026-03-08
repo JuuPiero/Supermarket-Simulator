@@ -4,6 +4,8 @@ import { Item } from '../Item';
 import { QueueManager } from '../QueueManager';
 import { NavigationContainer } from '../UI/Navigation/NavigationContainer';
 import { Observable } from '../Observable';
+import { EventBus } from '../EventBus';
+import { GameEvent } from '../GameEvent';
 const { ccclass, property } = _decorator;
 export enum CheckoutMethod {
     Cash,
@@ -41,6 +43,7 @@ export class CheckoutCounter extends Component {
         this.itemsInTable.splice(index, 1)
         if(this.itemsInTable.length == 0) {
             console.log("Scan done")
+            EventBus.emit(GameEvent.SCANNED)
             ServiceLocator.get(NavigationContainer).stack.navigate('CashCheckout')
             // const customer = ServiceLocator.get(QueueManager).getFirstCustomer()
             // customer.checkout()

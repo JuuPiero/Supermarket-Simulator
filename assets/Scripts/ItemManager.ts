@@ -13,8 +13,11 @@ export class ItemManager extends Component {
 
     private map = new Map<string, Prefab>()
     private spawnIndex: number = 0;
-    protected start(): void {
+    protected onLoad(): void {
         ServiceLocator.register(ItemManager, this);
+    }
+    protected start(): void {
+       
         for (const prefab of this.prefabs) {
             const item = prefab.data.getComponent(Item)
             this.map.set(item.itemId, prefab)

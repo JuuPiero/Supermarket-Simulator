@@ -13,16 +13,16 @@ export class CashCheckoutScreen extends ScreenBase {
     @property({type: Button})
     public okBtn: Button = null;
 
-    // public override enter(param?: object): void {
-    //     super.enter(param);
-    //     const monitorUI: MonitorUI = ServiceLocator.get(MonitorUI)
-    //     const checkoutCouter: CheckoutCounter = ServiceLocator.get(CheckoutCounter)
-    //     const total: number = checkoutCouter.total
-    //     monitorUI.totalUI.setData("Total", `$${total}`)
-    // }
-    // public override exit(): void {
-    //     super.exit();
-    // }
+    public override enter(param?: object): void {
+        super.enter(param);
+        const monitorUI: MonitorUI = ServiceLocator.get(MonitorUI)
+        // const checkoutCouter: CheckoutCounter = ServiceLocator.get(CheckoutCounter)
+        monitorUI.totalUI.node.active = true
+        monitorUI.receiveUI.node.active = false
+    }
+    public override exit(): void {
+        super.exit();
+    }
 
 }
 

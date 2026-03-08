@@ -11,9 +11,11 @@ export class QueueManager extends Component {
 
     @property({ type: Customer })
     public customers: Customer[] = [];
+    protected onLoad(): void {
+        ServiceLocator.register(QueueManager, this)
+    }
 
     start() {
-        ServiceLocator.register(QueueManager, this)
         this.updateQueue();
     }
 
