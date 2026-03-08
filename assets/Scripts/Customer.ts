@@ -3,6 +3,9 @@ import { ServiceLocator } from './ServiceLocator';
 import { CheckoutCounter, CheckoutMethod } from './Checkout/CheckoutCounter';
 import { ItemManager } from './ItemManager';
 import { TutorialController } from './TutorialController';
+import { EventBus } from './EventBus';
+import { GameEvent } from './GameEvent';
+import { NavigationContainer } from './UI/Navigation/NavigationContainer';
 
 const { ccclass, property } = _decorator;
 
@@ -35,8 +38,7 @@ export class Customer extends Component {
     @property({type: Enum(CheckoutMethod)})
     public checkoutMethod: CheckoutMethod;
 
-    
-
+   
     start() {
         this.activeVisual();
     }
@@ -99,7 +101,8 @@ export class Customer extends Component {
         ServiceLocator.get(TutorialController).displayTutorial()
     }
     public checkout() {
-        console.log("checkout")
+        console.log("customer checkout")
+        this.animator.setValue("isPaying", true);
         switch (this.checkoutMethod) {
             case CheckoutMethod.Card:
                 this.cardObject.setParent(this.rightHand)

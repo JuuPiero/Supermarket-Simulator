@@ -1,0 +1,79 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "9e5c058b-8ff2-4021-967f-f73a9fb360a3",
+  "files": [],
+  "subMetas": {
+    "f0b1b": {
+      "importer": "gltf-mesh",
+      "uuid": "9e5c058b-8ff2-4021-967f-f73a9fb360a3@f0b1b",
+      "displayName": "",
+      "id": "f0b1b",
+      "name": "Juice_Apple.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 248
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "40abd": {
+      "importer": "gltf-scene",
+      "uuid": "9e5c058b-8ff2-4021-967f-f73a9fb360a3@40abd",
+      "displayName": "",
+      "id": "40abd",
+      "name": "Juice_Apple.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "fbx": {
+      "smartMaterialEnabled": true,
+      "matchMeshNames": false
+    },
+    "assetFinder": {
+      "meshes": [
+        "9e5c058b-8ff2-4021-967f-f73a9fb360a3@f0b1b"
+      ],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "9e5c058b-8ff2-4021-967f-f73a9fb360a3@40abd"
+      ]
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    }
+  }
+}

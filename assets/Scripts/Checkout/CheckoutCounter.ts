@@ -1,11 +1,12 @@
 import { _decorator, CCFloat, Component, Enum, Node, tween } from 'cc';
 import { ServiceLocator } from '../ServiceLocator';
 import { Item } from '../Item';
-import { QueueManager } from '../QueueManager';
-import { NavigationContainer } from '../UI/Navigation/NavigationContainer';
 import { Observable } from '../Observable';
+import { Customer } from '../Customer';
 import { EventBus } from '../EventBus';
 import { GameEvent } from '../GameEvent';
+import { MonitorUI } from '../UI/MonitorUI';
+import { QueueManager } from '../QueueManager';
 const { ccclass, property } = _decorator;
 export enum CheckoutMethod {
     Cash,
@@ -17,12 +18,9 @@ export class CheckoutCounter extends Component {
     @property({type: Node})
     public checkoutPositon: Node;
 
-    // @property({type: CCFloat})
     public total = new Observable<number>(0);
-    // @property({type: CCFloat})
     public receive = new Observable<number>(0);
-    @property({type: CCFloat})
-    public give: number = 0;
+    public give = new Observable<number>(0);
 
     @property({type: Enum(CheckoutMethod)})
     public checkoutMethod: CheckoutMethod;
@@ -30,8 +28,21 @@ export class CheckoutCounter extends Component {
     @property({type: Item})
     public itemsInTable: Item[] = []
 
+    public currentCustomer: Customer;
+
+
     onLoad() {
         ServiceLocator.register(CheckoutCounter, this);
+    }
+    protected start(): void {
+        EventBus.on(GameEvent.CHECKED_OUT, this.onCheckedOut)
+    }
+    protected onDestroy(): void {
+        EventBus.off(GameEvent.CHECKED_OUT, this.onCheckedOut)
+    }
+    public setCustomer(customer: Customer) {
+        this.currentCustomer = customer
+        this.checkoutMethod = customer.checkoutMethod
     }
 
     getChange() {
@@ -43,17 +54,32 @@ export class CheckoutCounter extends Component {
         this.itemsInTable.splice(index, 1)
         if(this.itemsInTable.length == 0) {
             console.log("Scan done")
-            EventBus.emit(GameEvent.SCANNED)
-            ServiceLocator.get(NavigationContainer).stack.navigate('CashCheckout')
-            // const customer = ServiceLocator.get(QueueManager).getFirstCustomer()
-            // customer.checkout()
+            this.currentCustomer.checkout()
+            // EventBus.emit(GameEvent.SCANNED)
         }
     }
     public addItemToScan(item: Item) {
         this.itemsInTable.push(item)
     }
     public reset() {
-        this.give = 0
+        this.give.value = 0
+        this.total.value = 0
+        this.receive.value = 0
+    }
+    public startCheckout() {
+        this.currentCustomer.animator.setValue('isPaying', false)
+        this.receive.value = this.currentCustomer.amountMoney
+        ServiceLocator.get(MonitorUI).prepareBill();
+    }
+    onCheckedOut = () => {
+        if(this.give.value == this.getChange()) {
+            console.log("Checkout success")
+            this.reset()
+        }
+        else {
+            console.log("Checkout fail")
+            
+        }
     }
 }
 

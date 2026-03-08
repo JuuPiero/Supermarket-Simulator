@@ -1,4 +1,7 @@
 import { _decorator, Button, CCFloat, Component, Label, Node } from 'cc';
+import { ServiceLocator } from '../ServiceLocator';
+import { ItemManager } from '../ItemManager';
+import { CheckoutCounter } from '../Checkout/CheckoutCounter';
 const { ccclass, property } = _decorator;
 
 @ccclass('CashButton')
@@ -32,7 +35,13 @@ export class CashButton extends Component {
         return Math.round(dollar * 100);
     }
     private onClick() {
+        const checkoutCounter = ServiceLocator.get(CheckoutCounter)
+        checkoutCounter.give.value += this.value
         console.log("Button clicked: " + this.value);
+        if(this.value >= 1) {
+            // this._label.string = `$${this.value}`
+            ServiceLocator.get(ItemManager).spawnMoney()
+        }
     }
     
 }

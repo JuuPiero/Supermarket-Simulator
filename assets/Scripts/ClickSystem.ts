@@ -1,5 +1,6 @@
 import { _decorator, Component, input, Input, EventMouse, PhysicsSystem, Camera, geometry } from 'cc';
 import { Item } from './Item';
+import { PaymentItem } from './Checkout/PaymentItem';
 
 const { ccclass } = _decorator;
 
@@ -33,10 +34,13 @@ export class ClickSystem extends Component {
         const node = result.collider.node;
 
         const item = node.getComponent(Item);
-        // const payment = node.getComponent
+        const payment = node.getComponent(PaymentItem)
 
         if (item) {
             item.onClick();
+        }
+        if(payment) {
+            payment.onClick()
         }
     }
 }

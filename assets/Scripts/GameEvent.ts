@@ -1,4 +1,5 @@
 export const GameEvent = {
     LEVEL_COMPLETE: "LEVEL_COMPLETE",
-    SCANNED: "SCANNED"
+    SCANNED: "SCANNED",
+    CHECKED_OUT: "CHECKED_OUT"
 }

@@ -3,6 +3,7 @@ import { IClickable } from './IClickable';
 import { ServiceLocator } from './ServiceLocator';
 import { CheckoutCounter } from './Checkout/CheckoutCounter';
 import { TutorialController } from './TutorialController';
+import { SoundManager } from './SoundManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('Item')
@@ -15,10 +16,10 @@ export class Item extends Component implements IClickable {
     public itemId: string;
 
 
-    onClick() {
+    public onClick() {
         console.log("scan item", this.name);
         ServiceLocator.get(CheckoutCounter).scanItem(this)
-        
+        SoundManager.instance.playOneShot('Scan')
 
         tween(this.node).to(5, { position: new Vec3(this.node.x, this.node.y, this.node.z - 50) })
         .call(() => {
