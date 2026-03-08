@@ -18,6 +18,7 @@ export class PaymentItem extends Component implements IClickable {
         // checkoutCounter.receive.value = checkoutCounter.currentCustomer.amountMoney
         switch (this.checkoutMethod) {
             case CheckoutMethod.Card:
+                ServiceLocator.get(NavigationContainer).stack.navigate('CardCheckout')
                 break;
             case CheckoutMethod.Cash:
                 ServiceLocator.get(NavigationContainer).stack.navigate('CashCheckout')

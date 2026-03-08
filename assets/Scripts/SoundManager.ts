@@ -32,6 +32,9 @@ export class SoundManager extends Component {
 
         this.initPool();
     }
+    protected start(): void {
+        this.playMusic("BG", true)
+    }
 
     initPool() {
         for (let i = 0; i < this.poolSize; i++) {
