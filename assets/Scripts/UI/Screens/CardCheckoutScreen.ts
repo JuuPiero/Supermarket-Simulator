@@ -34,16 +34,24 @@ export class CardCheckoutScreen extends ScreenBase {
                 this.onDigitClick(element.value)
             }
         }
-        this.okBtn?.node.on(Button.EventType.CLICK, this.onCheckout, this);
+    }
+    protected onLoad(): void {
+        this.okBtn?.node.on(Button.EventType.CLICK, this.onStartChechout, this);
+        EventBus.on(GameEvent.CHECKOUT_SUCCESS, this.onCheckSuccess)
     }
     protected onDestroy(): void {
-        this.okBtn?.node.off(Button.EventType.CLICK, this.onCheckout, this);
+        this.okBtn?.node.off(Button.EventType.CLICK, this.onStartChechout, this);
+        EventBus.off(GameEvent.CHECKOUT_SUCCESS, this.onCheckSuccess)
     }
 
-    onCheckout = () => {
+    onStartChechout = () => {
         ServiceLocator.get(CheckoutCounter).give.value = this.calculator.getValue()
-        EventBus.emit(GameEvent.CHECKED_OUT)
+        EventBus.emit(GameEvent.START_CHECKOUT)
         this.onClearClick()
+        
+    }
+    onCheckSuccess = () => {
+        this.exit()
     }
 
     onDigitClick(digit: string) {
@@ -70,7 +78,6 @@ export class CardCheckoutScreen extends ScreenBase {
     }
 
     private updateDisplay() {
-
         this.displayLabel.string = '$' + this.calculator.getDisplay();
     }
 }

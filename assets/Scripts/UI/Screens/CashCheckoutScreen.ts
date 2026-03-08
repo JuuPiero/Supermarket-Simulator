@@ -23,19 +23,31 @@ export class CashCheckoutScreen extends ScreenBase {
     protected onLoad(): void {
         this.resetBtn?.node.on(Button.EventType.CLICK, this.reset, this);
         this.okBtn?.node.on(Button.EventType.CLICK, this.onCheckout, this);
-        EventBus.on(GameEvent.CHECKED_OUT, this.exit.bind(this))
+
+        EventBus.on(GameEvent.START_CHECKOUT, this.onStartCheckout)
+        EventBus.on(GameEvent.CHECKOUT_SUCCESS, this.onCheckoutSuccess)
     }
     protected onDestroy(): void {
         this.resetBtn.node.off(Button.EventType.CLICK, this.reset, this);
-        EventBus.off(GameEvent.CHECKED_OUT, this.exit.bind(this))
+        this.okBtn?.node.off(Button.EventType.CLICK, this.onCheckout, this);
+        
+        EventBus.off(GameEvent.START_CHECKOUT, this.onStartCheckout)
+        EventBus.off(GameEvent.CHECKOUT_SUCCESS, this.onCheckoutSuccess)
+    }
+
+    onCheckoutSuccess = () => {
+        this.reset()
+        this.exit()
+    }
+    onStartCheckout = () => {
+        this.reset()
     }
 
     public override enter(param?: object): void {
         super.enter(param);
     }
-    public override exit(): void {
-        super.exit();
-    }
+   
+
     reset() {
         const moneys = ServiceLocator.get(ItemManager).moneyObjects;
         // const checkoutCounter = ServiceLocator.get(CheckoutCounter)
@@ -47,8 +59,8 @@ export class CashCheckoutScreen extends ScreenBase {
     }
 
     onCheckout = () => {
-        EventBus.emit(GameEvent.CHECKED_OUT)
-        this.reset()
+        EventBus.emit(GameEvent.START_CHECKOUT)
+        // this.reset()
     }
 
 }

@@ -56,6 +56,16 @@ export class Customer extends Component {
                 this.visuals[i].active = false;
             }
         }
+        switch (this.checkoutMethod) {
+            case CheckoutMethod.Card:
+                this.moneysObject.active = false
+                break;
+            case CheckoutMethod.Cash:
+                this.cardObject.active = false
+                break;
+            default:
+                break;
+        }
         // this.bagObject.active = this.hasBag;
     }
 

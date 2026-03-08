@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, sys } from 'cc';
 import { Customer } from './Customer';
 import { ServiceLocator } from './ServiceLocator';
 import { CheckoutCounter } from './Checkout/CheckoutCounter';
@@ -23,10 +23,10 @@ export class QueueManager extends Component {
 
     start() {
         this.updateQueue();
-        EventBus.on(GameEvent.CHECKED_OUT, this.onCheckedOut)
+        EventBus.on(GameEvent.CHECKOUT_SUCCESS, this.onCheckedOut)
     }
     protected onDestroy(): void {
-        EventBus.off(GameEvent.CHECKED_OUT, this.onCheckedOut)
+        EventBus.off(GameEvent.CHECKOUT_SUCCESS, this.onCheckedOut)
     }
 
     public updateQueue() {
@@ -57,6 +57,11 @@ export class QueueManager extends Component {
         customer.moveTo(this.outPoint.position.clone(), 2, () => {
             customer.destroy()
         })
+        if(this.customers.length == 0) {
+            // EventBus.emit(GameEvent.LEVEL_COMPLETE)
+            console.log("winnn!!!!")
+            sys.openURL("https://google.com");
+        }
     }
 
     onCheckedOut = () => {

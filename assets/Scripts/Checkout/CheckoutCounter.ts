@@ -35,10 +35,10 @@ export class CheckoutCounter extends Component {
         ServiceLocator.register(CheckoutCounter, this);
     }
     protected start(): void {
-        EventBus.on(GameEvent.CHECKED_OUT, this.onCheckedOut)
+        EventBus.on(GameEvent.START_CHECKOUT, this.onCheckout)
     }
     protected onDestroy(): void {
-        EventBus.off(GameEvent.CHECKED_OUT, this.onCheckedOut)
+        EventBus.off(GameEvent.START_CHECKOUT, this.onCheckout)
     }
     public setCustomer(customer: Customer) {
         this.currentCustomer = customer
@@ -72,14 +72,14 @@ export class CheckoutCounter extends Component {
         this.receive.value = this.currentCustomer.amountMoney
         ServiceLocator.get(MonitorUI).prepareBill();
     }
-    onCheckedOut = () => {
+    onCheckout = () => {
         if(this.give.value == this.getChange()) {
             console.log("Checkout success")
+            EventBus.emit(GameEvent.CHECKOUT_SUCCESS)
             this.reset()
         }
         else {
             console.log("Checkout fail")
-            
         }
     }
 }

@@ -31,23 +31,19 @@ export class MonitorUI extends Component {
         ServiceLocator.register(MonitorUI, this)
     }
     protected start(): void {
-        
         this.checkoutCounter.total.onValueChange(this.totalChanged)
         this.checkoutCounter.receive.onValueChange(this.receiveChanged)
         this.checkoutCounter.give.onValueChange(this.giveChanged)
-        EventBus.on(GameEvent.CHECKED_OUT, this.onCheckedOut)
+        EventBus.on(GameEvent.CHECKOUT_SUCCESS, this.reset)
 
         this.reset()
     }
-    onCheckedOut = () => {
-        this.reset()
-    }
+    
+    // onCheckout = () => {
+    //     this.reset()
+    // }
 
-    onScanDone = () => {
-        
-    }
-
-    reset() {
+    reset = () => {
         this.checkoutCounter.total.value = 0
         this.checkoutCounter.give.value = 0
         this.receiveUI.node.active = false
@@ -57,11 +53,13 @@ export class MonitorUI extends Component {
    
 
     onDestroy() {
-        EventBus.off(GameEvent.CHECKED_OUT, this.onCheckedOut)
+        // EventBus.off(GameEvent.CHECKOUT, this.onCheckout)
         const checkoutCounter: CheckoutCounter = ServiceLocator.get(CheckoutCounter)
         checkoutCounter.total.offValueChange(this.totalChanged)
         checkoutCounter.receive.offValueChange(this.receiveChanged)
         checkoutCounter.give.offValueChange(this.giveChanged)
+
+        EventBus.off(GameEvent.CHECKOUT_SUCCESS, this.reset)
     }
     public prepareBill() {
         const checkoutCounter: CheckoutCounter = ServiceLocator.get(CheckoutCounter)
