@@ -56,17 +56,10 @@ export class Customer extends Component {
                 this.visuals[i].active = false;
             }
         }
-        switch (this.checkoutMethod) {
-            case CheckoutMethod.Card:
-                this.moneysObject.active = false
-                break;
-            case CheckoutMethod.Cash:
-                this.cardObject.active = false
-                break;
-            default:
-                break;
-        }
-        // this.bagObject.active = this.hasBag;
+        this.moneysObject.active = false
+        this.cardObject.active = false
+        this.bagObject.active = false
+
     }
 
     moveTo(target: Vec3, duration: number = 0.5, onMoveCompleted?: Function) {
@@ -108,17 +101,20 @@ export class Customer extends Component {
             const item = ServiceLocator.get(ItemManager).spawnItem(id);
         }
         console.log("placedItems")
-        ServiceLocator.get(TutorialController).displayTutorial()
+        // ServiceLocator.get(TutorialController).displayTutorial()
     }
     public startCheckout() {
         console.log("customer start checkout")
         this.animator.setValue("isPaying", true);
+
         switch (this.checkoutMethod) {
             case CheckoutMethod.Card:
+                this.cardObject.active = true
                 this.cardObject.setParent(this.rightHand)
                 this.cardObject.setPosition(Vec3.ZERO);
                 break;
             case CheckoutMethod.Cash:
+                this.moneysObject.active = true
                 this.moneysObject.setParent(this.rightHand)
                 this.moneysObject.setPosition(Vec3.ZERO);
                 break;

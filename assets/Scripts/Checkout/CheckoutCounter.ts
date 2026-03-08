@@ -80,6 +80,8 @@ export class CheckoutCounter extends Component {
         }
         else {
             console.log("Checkout fail")
+            this.currentCustomer.animator.setValue('isAngry', true)
+            EventBus.emit(GameEvent.CHECKED_FAILED)
         }
     }
 }

@@ -37,10 +37,15 @@ export class CardCheckoutScreen extends ScreenBase {
     }
     protected onLoad(): void {
         this.okBtn?.node.on(Button.EventType.CLICK, this.onStartChechout, this);
+        this.deleteBtn?.node.on(Button.EventType.CLICK, this.onDeleteClick, this);
+        this.decimalBtn?.node.on(Button.EventType.CLICK, this.onDecimalClick, this);
+
         EventBus.on(GameEvent.CHECKOUT_SUCCESS, this.onCheckSuccess)
     }
     protected onDestroy(): void {
         this.okBtn?.node.off(Button.EventType.CLICK, this.onStartChechout, this);
+        this.deleteBtn?.node.off(Button.EventType.CLICK, this.onDeleteClick, this);
+        this.decimalBtn?.node.off(Button.EventType.CLICK, this.onDecimalClick, this);
         EventBus.off(GameEvent.CHECKOUT_SUCCESS, this.onCheckSuccess)
     }
 
@@ -48,7 +53,6 @@ export class CardCheckoutScreen extends ScreenBase {
         ServiceLocator.get(CheckoutCounter).give.value = this.calculator.getValue()
         EventBus.emit(GameEvent.START_CHECKOUT)
         this.onClearClick()
-        
     }
     onCheckSuccess = () => {
         this.exit()
@@ -66,7 +70,6 @@ export class CardCheckoutScreen extends ScreenBase {
     }
 
     onDeleteClick() {
-
         this.calculator.delete();
         this.updateDisplay();
     }

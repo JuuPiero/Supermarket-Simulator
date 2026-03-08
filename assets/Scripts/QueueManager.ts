@@ -48,6 +48,7 @@ export class QueueManager extends Component {
         console.log("Customer start checkout");
         ServiceLocator.get(CheckoutCounter).setCustomer(customer)
         customer.placeItems()
+        EventBus.emit(GameEvent.START_SCAN)
         // customer.animator.setValue("isPaying", true)
         // customer.checkout()
     }

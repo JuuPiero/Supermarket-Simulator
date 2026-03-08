@@ -22,7 +22,7 @@ export class ItemManager extends Component {
         ServiceLocator.register(ItemManager, this);
     }
     protected start(): void {
-       
+
         for (const prefab of this.prefabs) {
             const item = prefab.data.getComponent(Item)
             this.map.set(item.itemId, prefab)
@@ -57,29 +57,38 @@ export class ItemManager extends Component {
         tween(itemNode)
             .to(0.3, { position: targetPos })
             .call(() => {
-                
+
                 // ServiceLocator.get(TutorialController).setTarget(itemNode)
             })
             .start()
     }
 
     spawnItem(itemId: string): Item {
+
         const checkout = ServiceLocator.get(CheckoutCounter)
 
         const prefab = this.getItem(itemId)
         const itemNode = instantiate(prefab)
-        const item = itemNode.getComponent(Item)
+
+        const item = itemNode.getComponent(Item)!
         checkout.addItemToScan(item)
-        
+
         itemNode.setParent(checkout.node)
+
         const basePos = checkout.checkoutPositon.position.clone()
-        const offset = 0.1 * this.spawnIndex
+
+        // spawn random quanh điểm base
+        const radius = 0.25
+        const angle = Math.random() * Math.PI * 2
+        const r = Math.random() * radius
+
         const targetPos = new Vec3(
-            basePos.x + offset,
+            basePos.x + Math.cos(angle) * r,
             basePos.y,
-            basePos.z
+            basePos.z + Math.sin(angle) * r
         )
 
+        // spawn từ phía sau
         const startPos = new Vec3(
             basePos.x + 1,
             basePos.y,
@@ -96,6 +105,7 @@ export class ItemManager extends Component {
             .start()
 
         this.spawnIndex++
+
         return item
     }
 }

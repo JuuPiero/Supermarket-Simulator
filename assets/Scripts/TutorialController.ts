@@ -1,5 +1,7 @@
 import { _decorator, Component, Node, Camera, Vec3, UITransform, tween } from 'cc';
 import { ServiceLocator } from './ServiceLocator';
+import { EventBus } from './EventBus';
+import { GameEvent } from './GameEvent';
 const { ccclass, property } = _decorator;
 
 @ccclass('TutorialController')
@@ -37,6 +39,16 @@ export class TutorialController extends Component {
             .start();
 
         this.hide()
+    }
+
+    protected onLoad(): void {
+        EventBus.on(GameEvent.START_SCAN, this.onStartScan)
+    }
+    protected onDestroy(): void {
+        EventBus.off(GameEvent.START_SCAN, this.onStartScan)
+    }
+    onStartScan = () => {
+        this.displayTutorial()
     }
 
     // update() {
@@ -77,9 +89,6 @@ export class TutorialController extends Component {
         this.target = node;
     }
    
-    // public showArrow() {
-    //     this.arrow.active = true;
-    // }
 
     public displayTutorial() {
         this.text.active = true
