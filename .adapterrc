@@ -1,0 +1,7 @@
+{
+  "exportChannels": ["Google", "IronSource", "AppLovin"], 
+  "orientation": "landscape", 
+  "isZip": true,
+  "tinify": true, 
+  "tinifyApiKey": "nTLp0Z56Hrg75LcKSpHQ26830FxmS7L1"
+}

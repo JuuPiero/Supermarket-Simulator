@@ -503,6 +503,22 @@
           "faceCount": 0.1
         }
       ]
+    },
+    "allowMeshDataAccess": false,
+    "tangents": 1,
+    "meshOptimize": {
+      "enable": true,
+      "vertexCache": true,
+      "vertexFetch": true
+    },
+    "meshSimplify": {
+      "enable": true,
+      "targetRatio": 0.6,
+      "errorRate": 0.6
+    },
+    "meshCompress": {
+      "enable": true,
+      "compress": true
     }
   }
 }

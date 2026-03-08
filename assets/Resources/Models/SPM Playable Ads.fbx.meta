@@ -150,6 +150,35 @@
           "faceCount": 0.1
         }
       ]
+    },
+    "meshSimplify": {
+      "targetRatio": 0.6,
+      "errorRate": 0.6,
+      "enable": true
+    },
+    "meshOptimize": {
+      "enable": true,
+      "vertexCache": true,
+      "vertexFetch": true
+    },
+    "allowMeshDataAccess": false,
+    "tangents": 1,
+    "legacyFbxImporter": false,
+    "addVertexColor": false,
+    "generateLightmapUVNode": false,
+    "meshOptimizer": {
+      "enable": false,
+      "algorithm": "simplify",
+      "simplifyOptions": {
+        "targetRatio": 1,
+        "enableSmartLink": true,
+        "agressiveness": 7,
+        "maxIterationCount": 100
+      }
+    },
+    "meshCompress": {
+      "enable": true,
+      "compress": true
     }
   }
 }
