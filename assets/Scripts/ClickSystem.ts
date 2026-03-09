@@ -1,4 +1,4 @@
-import { _decorator, Component, input, Input, EventMouse, PhysicsSystem, Camera, geometry } from 'cc';
+import { _decorator, Component, input, Input, EventMouse, PhysicsSystem, Camera, geometry, EventTouch } from 'cc';
 import { Item } from './Item';
 import { PaymentItem } from './Checkout/PaymentItem';
 
@@ -14,14 +14,16 @@ export class ClickSystem extends Component {
     }
 
     onEnable() {
-        input.on(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+        input.on(Input.EventType.MOUSE_DOWN, this.onPointerDown, this);
+        input.on(Input.EventType.TOUCH_START, this.onPointerDown, this);
     }
 
     onDisable() {
-        input.off(Input.EventType.MOUSE_DOWN, this.onMouseDown, this);
+        input.off(Input.EventType.MOUSE_DOWN, this.onPointerDown, this);
+        input.off(Input.EventType.TOUCH_START, this.onPointerDown, this);
     }
 
-    onMouseDown(event: EventMouse) {
+    onPointerDown(event: EventMouse | EventTouch) {
 
         const pos = event.getLocation();
 
