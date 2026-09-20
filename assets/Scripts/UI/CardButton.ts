@@ -1,5 +1,4 @@
 import { _decorator, Button, CCString, Component, Label, Node } from 'cc';
-import { CardCheckoutScreen } from './Screens/CardCheckoutScreen';
 const { ccclass, property } = _decorator;
 
 @ccclass('CardButton')

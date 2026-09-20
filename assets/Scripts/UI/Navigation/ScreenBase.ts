@@ -5,7 +5,7 @@ const { ccclass, property } = _decorator;
 @ccclass('ScreenBase')
 export class ScreenBase extends Component implements IScreen {
    
-    @property({type : CCString})
+    @property
     public screenName: string = '';
 
     public enter(param?: object): void {
